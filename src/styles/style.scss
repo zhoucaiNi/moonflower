@@ -1,0 +1,697 @@
+$tan: #E1B166;
+$lightTan: #EDCC8B;
+$default: #FEF8F2;
+
+@mixin mobile {
+  @media screen and (max-width:480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width:768) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width:1200) {
+    @content;
+  }
+}
+
+body {
+  background-color: $default;
+}
+
+
+.profileCircle {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: rgb(127, 127, 123);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .lore {
+    width: 80%;
+  }
+
+  .homeContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    @include mobile {
+      margin-top: 100px;
+    }
+
+    span {
+      font-size: 56px;
+
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    img {
+      @include mobile {
+        height: 35vh;
+      }
+    }
+
+    .logo {
+      font-style: none;
+    }
+
+    button {
+      border: none;
+      background-color: $lightTan;
+      width: 400px;
+      height: 60px;
+      font-size: 36px;
+      cursor: pointer;
+      border-radius: 10px;
+
+      @include mobile {
+        width: 200px;
+        height: 60px;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.header {
+  padding-top: 10px;
+  width: 98%;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    color: $tan;
+    font-size: 36px;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 10px;
+
+    button {
+      height: 50px;
+      width: 100px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      @include mobile {
+        height: 35px;
+        width: 60px;
+      }
+    }
+
+    .signup {
+      background-color: $lightTan;
+      border: none;
+    }
+
+    .login {
+      background-color: white;
+      border-color: black;
+    }
+  }
+}
+
+// LOGIN/SIGN UP PAGES
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .formContainer {
+    background-color: $default;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+      width: 250px;
+    }
+
+    span {
+      font-size: 46px;
+
+    }
+
+
+    .formWrapper {
+      background-color: $lightTan;
+      padding: 20px 60px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 200px;
+
+      span {
+        font-size: 18px;
+      }
+
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        input {
+          padding: 15px;
+          border: none;
+          width: 250px;
+          border-bottom: 2px solid $tan;
+
+          &::placeholder {
+            color: rgb(175, 175, 175)
+          }
+        }
+
+        button {
+          background-color: $tan;
+          color: white;
+          padding: 10px;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+        }
+      }
+
+      .link {
+        font-style: none;
+        color: black;
+      }
+    }
+  }
+}
+
+// USERNAV COMPONENT
+
+.navContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .usernav {
+    padding-top: 10px;
+    width: 98%;
+    display: flex;
+
+    .logo {
+      color: $tan;
+      font-size: 36px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 30px;
+
+      @include mobile {
+        font-size: 25px;
+      }
+    }
+
+    #navbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      a {
+        color: black;
+        font-size: 24px;
+        text-decoration: none;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      a.active {
+        text-decoration: none;
+        border-bottom: 3px solid $tan;
+      }
+
+      .profile {
+        display: flex;
+        margin-left: auto;
+
+        .accountCircle {
+          font-size: 36px;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+
+    }
+
+    .menuIcon {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        font-size: 32px;
+        cursor: pointer;
+      }
+    }
+
+
+    .links {
+      display: flex;
+      gap: 10px;
+
+      button {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+        background-color: $default;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #hidden {
+    display: none;
+  }
+
+  #mobileNavbar {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    a {
+      color: black;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    a.active {
+      text-decoration: none;
+      border-bottom: 3px solid $tan;
+    }
+  }
+}
+
+// GAMES PAGE
+
+.games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .gamesContainer {
+
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #E1B166;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 80vh;
+    width: 70%;
+
+    @include mobile {
+      width: 95%;
+      flex-direction: column;
+      overflow: scroll;
+    }
+
+    .title {
+      background-color: #E1B166;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: #EBCD9E;
+
+      @include mobile {
+        top: 0;
+        position: sticky;
+      }
+
+      .title {
+        background-color: #E1B166;
+        width: 100%;
+        padding: 10px;
+
+      }
+
+      .search {
+        background-color: #EBCD9E;
+        border-bottom: 1px solid gray;
+
+        @include mobile {
+          top: 0;
+          position: sticky;
+        }
+
+        .searchForm {
+          padding: 10px;
+
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: rgb(0, 0, 0);
+            outline: none;
+            width: 100%;
+
+            &::placeholder {
+              color: rgb(61, 60, 60)
+            }
+          }
+
+        }
+
+        :hover {
+          background-color: #dea54a;
+        }
+
+        .userChat {
+          // padding-left: 10px;
+          padding: 5px;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+
+
+          .circle {
+            width: 25px;
+            height: 25px;
+            background-color: gray;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+          }
+
+        }
+      }
+
+      .suggestedUsers {
+        background-color: #EBCD9E;
+        // padding: 10px;
+        // height: calc(100% - 85px);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        overflow: scroll;
+
+        p {
+          padding: 5px
+        }
+
+        .friend {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+          width: 100%;
+          padding: 5px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: #dea54a;
+          }
+        }
+      }
+
+      .currentFriends {
+        background-color: #EBCD9E;
+        // padding: 10px;
+        // height: calc(100% - 85px);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        overflow: scroll;
+
+        p {
+          padding: 5px
+        }
+
+        .friend {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+          width: 100%;
+          padding: 5px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: #dea54a;
+          }
+        }
+      }
+    }
+
+    .gameHistory {
+      background-color: #F6E2C1;
+      flex: 5;
+
+      .title {
+        background-color: #F6E2C1;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .gameList {
+        background-color: #F3C781;
+        overflow: scroll;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        height: calc(100% - 60px);
+
+        button {
+          width: 85%;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// GAME COMPONENT
+
+.game {
+  background-color: #F4EBDC;
+  border-radius: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%; // gap: 40px;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+    .user {
+      display: flex;
+      flex-direction: column;
+
+      .circle {
+        width: 50px;
+        height: 50px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+        background: rgb(127, 127, 123);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+  }
+}
+
+// PROFILE PAGE
+
+.profileContainer {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .profileBox {
+    background-color: $lightTan;
+    border-radius: 10px;
+    padding: 15px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: rgb(127, 127, 123);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .winHistory {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      gap: 20px;
+
+      .trophy {
+        font-size: 50px;
+      }
+
+      .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .number {
+          font-size: 22px;
+        }
+
+        .text {
+          font-size: 12px;
+          color: rgb(118, 116, 116);
+        }
+      }
+
+    }
+
+  }
+
+  .gameBox {
+    padding: 15px;
+    display: flex;
+    // background-color: #E1B166;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    span {
+      align-self: baseline
+    }
+
+    .friendReqContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+
+      .friendReqBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .friendTitle {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+
+          p {
+            color: rgb(106, 106, 103);
+          }
+
+          .circle {
+            width: 40px;
+            height: 40px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background: rgb(127, 127, 123);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .friendReqButtons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+
+          button {
+            background-color: $tan;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+
+            &:hover {
+              background-color: rgb(235, 211, 166);
+            }
+          }
+
+
+
+
+
+        }
+      }
+
+    }
+  }
+}
