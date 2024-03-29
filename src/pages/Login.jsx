@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import eye from "../assets/Eyeofpingus.svg"
+// import eye from "../assets/Eyeofpingus.svg"
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -28,7 +28,7 @@ const Login = () => {
     <div className='authContainer'>
       {/* <Header /> */}
       <div className="formContainer">
-        <img src={eye} alt="logo" />
+        {/* <img src={eye} alt="logo" /> */}
         <span> Welcome back!</span>
         <div className="formWrapper">
           {/* <span> Log in</span> */}

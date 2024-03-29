@@ -3,10 +3,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 // import CountReducer from './count-reducer';
-import BracketReducer from './bracketReducer';
+import postReducer from './postReducer';
 
 const rootReducer = combineReducers({
-  bracket: BracketReducer,
+  posts: postReducer,
 });
 
 export default rootReducer;
