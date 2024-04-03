@@ -13,6 +13,9 @@ const postReducer = produce((draftState, action) => {
     case ActionTypes.FETCH_POSTS_ERROR:
       console.log("fetch posts error")
       break;
+    case ActionTypes.CREATE_POST:
+      draftState.list.push(action.payload);
+      break;
     default:
       return draftState;
   }
