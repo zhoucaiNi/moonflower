@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Define the base API URL
-// const API_URL = 'https://slider-fun.onrender.com/api';
-const API_URL = 'http://localhost:9090/api';
+const API_URL = 'https://moonflower-backend.onrender.com/api';
+// const API_URL = 'http://localhost:9090/api';
 
 // Redux action types
 export const ActionTypes = {
@@ -13,7 +13,7 @@ export const ActionTypes = {
 
 export const fetchAllPost = () => async (dispatch) => {
   try {
-    const response = await axios.get(`${API_URL}/posts/all`);
+    const response = await axios.get(`${API_URL}/notes/all`);
 
     if (response.status === 200) {
       console.log(response.data)
@@ -39,7 +39,7 @@ export const fetchAllPost = () => async (dispatch) => {
 export const createPost = (post) => async (dispatch) => {
 
   try {
-    const response = await axios.post(`${API_URL}/posts/new`, post);
+    const response = await axios.post(`${API_URL}/notes/new`, post);
 
     if (response.status === 200) {
       console.log(response.data)

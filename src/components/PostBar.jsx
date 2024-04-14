@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createPost } from '../actions/postActions';
 
 const PostBar = () => {
@@ -11,9 +11,7 @@ const PostBar = () => {
     console.log(content)
     dispatch(createPost({
       title: "",
-      tags: "",
       content: content,
-      coverUrl: "",
     }));
   }
 
