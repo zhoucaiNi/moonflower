@@ -18,9 +18,8 @@ const PostBar = () => {
   return (
     <div className="window" id="note-bar">
       <div className="title-bar">
-        <div className="title-bar-text"> Add notes! </div>
+        <div className="title-bar-text"> Add notes here! </div>
       </div>
-      <p> {content}</p>
 
       <div className="window-body">
         <div className="field-row">
