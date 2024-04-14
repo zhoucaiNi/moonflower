@@ -1,0 +1,30 @@
+.lockPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .lockUI {
+    display: flex;
+    flex-direction: column;
+
+
+    .inputContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+
+      input {
+        height: 50%;
+        width: 70%;
+      }
+
+      button {
+        margin-top: 10px;
+
+        width: 20%;
+      }
+    }
+  }
+}

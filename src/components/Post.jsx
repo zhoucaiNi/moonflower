@@ -1,5 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
+import ReactMarkdown from 'react-markdown'
 
 const Post = (props) => {
 
@@ -16,7 +17,8 @@ const Post = (props) => {
       // onDrag={this.handleDrag}
       // onStop={this.handleStopDrag}
       >
-        <h1> {props.post.content} </h1>
+        <h1 >{props.post.content || ""} </h1>
+        <ReactMarkdown> {props.post.content || ""} </ReactMarkdown>
       </Draggable>
     </div>
   )
