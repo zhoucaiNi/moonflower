@@ -17,8 +17,10 @@ const Post = (props) => {
       // onDrag={this.handleDrag}
       // onStop={this.handleStopDrag}
       >
-        <h1 >{props.post.content || ""} </h1>
-        <ReactMarkdown> {props.post.content || ""} </ReactMarkdown>
+        <div>
+          <h1 >{props.post.content || ""} </h1>
+          {/* <ReactMarkdown> {props.post.content || ""} </ReactMarkdown> */}
+        </div>
       </Draggable>
     </div>
   )
