@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "../styles/lock.scss"
+import { Container, Text, Input, Button, InputGroup, Flex, Center } from '@chakra-ui/react';
 
 
 const Lock = () => {
@@ -14,15 +15,19 @@ const Lock = () => {
     }
   }
   return (
-    <div className='lockPage'>
-      <div className='lockUI'>
-        <h1>Please enter the password </h1>
-        <div className='inputContainer'>
-          <input type="text" onChange={(e) => setPassword(e.target.value)} />
-          <button type="button" value="submit" onClick={() => handleLock()} > Unlock </button>
-        </div>
-      </div>
-    </div >
+    <>
+      <Flex width={"100vw"} height={"100vh"} alignContent={"center"} justifyContent={"center"}>
+        <Center>
+          <Container>
+            <Text>Please enter the password </Text>
+            <InputGroup size='md'>
+              <Input type="text" onChange={(e) => setPassword(e.target.value)} />
+              <Button type="button" value="submit" onClick={() => handleLock()} > Unlock </Button>
+            </InputGroup>
+          </Container>
+        </Center>
+      </Flex>
+    </>
   )
 }
 

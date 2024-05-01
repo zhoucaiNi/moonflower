@@ -2,6 +2,7 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import ReactMarkdown from 'react-markdown'
 import "../styles/note.scss"
+import { Text } from '@chakra-ui/react';
 
 const Post = (props) => {
 
@@ -18,11 +19,11 @@ const Post = (props) => {
       // onDrag={this.handleDrag}
       // onStop={this.handleStopDrag}
       >
-        <div>
+        <Text>
           {/* <h1 >{props.post.content || ""} </h1> */}
           <ReactMarkdown>{props.post.content || ""}</ReactMarkdown>
 
-        </div>
+        </Text>
       </Draggable>
     </div>
   )

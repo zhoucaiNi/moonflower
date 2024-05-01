@@ -1,39 +1,41 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { createPost } from '../actions/postActions';
+import { Box, Button, Input, InputGroup, Text } from '@chakra-ui/react';
 
 const PostBar = () => {
 
   const dispatch = useDispatch();
-  const [content, setContent] = useState("hey")
+  const [content, setContent] = useState("")
 
   const handleCreatePost = () => {
-    console.log(content)
-    dispatch(createPost({
-      title: "",
-      content: content,
-    }));
+    try {
+      dispatch(createPost({
+        title: "",
+        content: content,
+      }));
+
+    } catch (e) {
+      console.log(e)
+    }
+
+    setContent("");
   }
 
   return (
-    <div className="window" id="note-bar">
-      <div className="title-bar">
-        <div className="title-bar-text"> Add notes here! </div>
-      </div>
-
-      <div className="window-body">
-        <div className="field-row">
-          <input
-            id="text17"
-            className="search-bar"
-            type="text"
-            placeholder="enter note title"
-            onChange={(e) => setContent(e.target.value)}
-          />
-          <button type="button" value="submit" onClick={() => handleCreatePost()} > Create New Note </button>
-        </div>
-      </div>
-    </div>
+    <Box mb="40px" mt="20px" className="window" id="note-bar">
+      <Text>Write your note here</Text>
+      <InputGroup size='md'>
+        <Input
+          id="text17"
+          type="text"
+          placeholder="enter note title"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <Button type="button" value="submit" onClick={() => handleCreatePost()} > Create </Button>
+      </InputGroup>
+    </Box>
   )
 }
 

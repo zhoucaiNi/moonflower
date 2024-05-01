@@ -6,23 +6,24 @@ import Lock from "./pages/Lock";
 // import { AuthContext } from './context/AuthContext';
 // import { useContext } from 'react';
 // import Header from "./componenets/Header";
-
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   // const { currentUser } = useContext(AuthContext);
   return (
-
-    <BrowserRouter>
-      {/* {currentUser ? <Usernav /> : <Header />} */}
-      <Routes>
-        <Route path="/">
-          <Route index element={<Lock />} />
-          <Route path="home" element={<Home />} />
-          {/* <Route path="signup" element={<Register />} /> */}
-          {/* <Route path="profile/:id" element={<Profile />} /> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ChakraProvider>
+      <BrowserRouter>
+        {/* {currentUser ? <Usernav /> : <Header />} */}
+        <Routes>
+          <Route path="/">
+            <Route index element={<Lock />} />
+            <Route path="home" element={<Home />} />
+            {/* <Route path="signup" element={<Register />} /> */}
+            {/* <Route path="profile/:id" element={<Profile />} /> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
 }
 

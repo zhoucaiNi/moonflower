@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllPost } from '../actions/postActions';
 import Post from './Post';
+import { Container } from '@chakra-ui/react';
 
 const Bulletin = () => {
 
@@ -19,11 +20,13 @@ const Bulletin = () => {
 
   return (
     <div>
-      <div className="window">
-        <div className="postList">
-          {postList}
+      <Container>
+        <div className="window">
+          <div className="postList">
+            {postList}
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   )
 }
